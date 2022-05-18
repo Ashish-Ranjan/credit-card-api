@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "npx env-cmd -f ./config/test.env jest --watch --coverage",
-    "start": "node ./src/app.js",
+    "start": "npx env-cmd -f ./config/prod.env node ./src/index.js",
     "dev": "npx env-cmd -f ./config/dev.env nodemon ./src/index.js"
   },
   "jest": {
