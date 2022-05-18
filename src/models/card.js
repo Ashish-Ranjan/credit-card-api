@@ -12,7 +12,7 @@ const cardSchema = new mongoose.Schema({
     required: true,
     unique: true,
     validate(value) {
-      if (!luhnValidation(value) && value.length > 19) {
+      if (!luhnValidation(value) || value.length > 19) {
         throw new Error("Invalid Card Number");
       }
     },

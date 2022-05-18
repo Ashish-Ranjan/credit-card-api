@@ -26,14 +26,14 @@ router.post("/addnewcard", (req, res) => {
       .catch((error) => {
         if (error.code === 11000) {
           return res.status(400).send({
-            message: "cardnumber already exists",
+            _message: "cardnumber already exists",
             error: "Duplicate Error",
           });
         }
         res.status(400).send(error);
       });
   } catch (error) {
-    res.status(400).send({ error });
+    res.status(400).send(error);
   }
 });
 
