@@ -131,3 +131,7 @@ test("Should return all the cards", async () => {
   const response = await request(app).get("/getallcards").send().expect(200);
   expect(response.body).toHaveLength(1);
 });
+
+test("Should return 404 the cards", async () => {
+    const response = await request(app).get("/getallcard").send().expect(404);
+});
